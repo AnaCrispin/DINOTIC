@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetRunner – Juego</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div id="game-wrapper">
+        <!-- Área del juego -->
+        <div id="game-container">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- HUD lateral -->
+        <aside id="hud">
+            <h2 id="nombre-equipo">Equipo</h2>
+            <div id="jugador-activo">Jugador: Nivel Básico</div>
+            <div id="puntos">Puntaje: 0</div>
+            <div id="preguntas-restantes">Preguntas restantes: 3</div>
+
+            <!-- Vista de cámara con estado -->
+            <div id="camera-wrapper">
+                <video id="webcam-preview" autoplay muted playsinline></video>
+                <div id="camera-status" class="estado-verde"></div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Indicador de nivel -->
+    <div id="level-indicator">Nivel 1</div>
+
+
+
+    <script src="script.js"></script>
+    <div id="pregunta-modal" class="oculto">
+        <div class="pregunta-contenido">
+            <h3 id="texto-pregunta">Pregunta aquí...</h3>
+            <p>Usa ← para FALSO, → para VERDADERO</p>
+        </div>
+    </div>
+    <div id="feedback-modal" class="oculto">
+        <div id="feedback-texto">Retroalimentación aquí</div>
+    </div>
+    <div id="blur-layer" class="oculto"></div>
+
+    <!-- Pantalla final -->
+    <div id="final-screen" class="oculto">
+        <h2 id="final-score">Tu puntaje: 0</h2>
+        <button onclick="restartGame()">Jugar otra vez</button>
+    </div>
+
+    <!-- Ranking final -->
+    <div id="ranking" class="oculto">
+        <h2>🏆 Ranking de Puntajes</h2>
+        <ol id="lista-ranking"></ol>
+    </div>
+
+</body>
+
+</html>

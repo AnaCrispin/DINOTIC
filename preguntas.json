@@ -1,0 +1,212 @@
+[
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Guardar contraseñas en papel es buena práctica?",
+        "respuesta": false,
+        "explicacion": "Guardar contraseñas en papel es riesgoso porque cualquiera que encuentre el papel podría acceder a tus cuentas."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Es seguro usar redes Wi-Fi públicas sin protección?",
+        "respuesta": false,
+        "explicacion": "Porque estas redes pueden ser monitoreadas por otras personas, lo que permite que roben tus datos sin que te des cuenta."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Una contraseña fuerte debe tener letras, números y símbolos?",
+        "respuesta": true,
+        "explicacion": "Una contraseña fuerte es difícil de adivinar porque combina distintos tipos de caracteres."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Es recomendable activar la verificación en dos pasos?",
+        "respuesta": true,
+        "explicacion": "La verificación en dos pasos añade una capa extra de seguridad a tus cuentas."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Debes compartir tu contraseña con tus amigos para jugar juntos?",
+        "respuesta": false,
+        "explicacion": "Compartir contraseñas pone en riesgo tu seguridad, ya que pierdes el control de tu cuenta."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Todos los virus son visibles de inmediato?",
+        "respuesta": false,
+        "explicacion": "Algunos virus trabajan en segundo plano y no muestran señales claras al principio."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un virus informático puede dañar tu computadora?",
+        "respuesta": true,
+        "explicacion": "Un virus puede borrar archivos, dañar programas y hacer que tu equipo funcione mal."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un virus puede borrar tus archivos?",
+        "respuesta": true,
+        "explicacion": "Sí, algunos virus están diseñados para eliminar documentos importantes en tu equipo."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Abrir archivos sospechosos puede activar un virus?",
+        "respuesta": true,
+        "explicacion": "Los archivos sospechosos pueden contener virus que se ejecutan al abrirlos."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus se propagan por memorias USB?",
+        "respuesta": true,
+        "explicacion": "Los virus pueden copiarse automáticamente a memorias USB y propagarse a otras computadoras."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Es seguro usar la misma contraseña para todo?",
+        "respuesta": false,
+        "explicacion": "Usar la misma contraseña en todos lados aumenta el riesgo si una se filtra."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un gusano informático se replica sin ayuda?",
+        "respuesta": true,
+        "explicacion": "Los gusanos se copian solos y se propagan por redes."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Los virus se eliminan reiniciando el equipo?",
+        "respuesta": false,
+        "explicacion": "Reiniciar no elimina virus; se necesita un antivirus."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger graba lo que escribes?",
+        "respuesta": true,
+        "explicacion": "Un keylogger es un virus que espía tus pulsaciones de teclado."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger graba lo que escribes?",
+        "respuesta": true,
+        "explicacion": "Un keylogger es un virus que espía tus pulsaciones de teclado."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Es seguro usar la misma contraseña para todo?",
+        "respuesta": false,
+        "explicacion": "Usar la misma contraseña en todos lados aumenta el riesgo si una se filtra."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿HTTPS es más seguro que HTTP?",
+        "respuesta": true,
+        "explicacion": "HTTPS encripta la información que envías, evitando que sea vista por otros."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un gusano informático se replica sin ayuda?",
+        "respuesta": true,
+        "explicacion": "Los gusanos se copian solos y se propagan por redes."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Un firewall protege contra intrusos externos?",
+        "respuesta": true,
+        "explicacion": "Un firewall controla lo que entra y sale de tu red, ayudando a bloquear accesos no deseados."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Todo archivo .exe es peligroso?",
+        "respuesta": false,
+        "explicacion": "No todos los .exe son malos, pero pueden ser usados para instalar virus."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Un gusano informático se replica sin ayuda?",
+        "respuesta": true,
+        "explicacion": "Los gusanos se copian solos y se propagan por redes."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Un firewall protege contra intrusos externos?",
+        "respuesta": true,
+        "explicacion": "Un firewall controla lo que entra y sale de tu red, ayudando a bloquear accesos no deseados."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus se eliminan reiniciando el equipo?",
+        "respuesta": false,
+        "explicacion": "Reiniciar no elimina virus; se necesita un antivirus."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Un firewall protege contra intrusos externos?",
+        "respuesta": true,
+        "explicacion": "Un firewall controla lo que entra y sale de tu red, ayudando a bloquear accesos no deseados."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Cambiar la contraseña cada cierto tiempo es seguro?",
+        "respuesta": true,
+        "explicacion": "Cambiar la contraseña regularmente reduce el riesgo de hackeos prolongados."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Todo archivo .exe es peligroso?",
+        "respuesta": false,
+        "explicacion": "No todos los .exe son malos, pero pueden ser usados para instalar virus."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un gusano informático se replica sin ayuda?",
+        "respuesta": true,
+        "explicacion": "Los gusanos se copian solos y se propagan por redes."
+    },
+    {
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿HTTPS es más seguro que HTTP?",
+        "respuesta": true,
+        "explicacion": "HTTPS encripta la información que envías, evitando que sea vista por otros."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un keylogger graba lo que escribes?",
+        "respuesta": true,
+        "explicacion": "Un keylogger es un virus que espía tus pulsaciones de teclado."
+    },
+    {
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus se eliminan reiniciando el equipo?",
+        "respuesta": false,
+        "explicacion": "Reiniciar no elimina virus; se necesita un antivirus."
+    }
+]

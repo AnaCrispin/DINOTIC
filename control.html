@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>U-TIC</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        video#background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #00f0ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .controles {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 30px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .btn {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            font-size: 7rem;
+            color: white;
+            background: radial-gradient(circle at top left, #1e1e1e, #000);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(255, 0, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .up {
+            grid-column: 2;
+            grid-row: 1;
+            border-color: #ff00ff;
+        }
+
+        .left {
+            grid-column: 1;
+            grid-row: 2;
+            border-color: #00f0ff;
+        }
+
+        .right {
+            grid-column: 3;
+            grid-row: 2;
+            border-color: #ff00ff;
+        }
+
+        .fullscreen-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 2px solid #00f0ff;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .fullscreen-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 8px #00f0ff;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="assets/emulador.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+    </video>
+
+    <button class="fullscreen-btn" id="btnFullscreen" onclick="activarPantallaCompleta()">Pantalla completa</button>
+
+    <h1>CONTROL</h1>
+    <div class="controles">
+        <button class="btn up" onclick="enviar('saltar')">⬆️</button>
+        <button class="btn left" onclick="enviar('izquierda')">⬅️</button>
+        <button class="btn right" onclick="enviar('derecha')">➡️</button>
+    </div>
+
+    <script>
+        const canal = new BroadcastChannel('canal_control_dino');
+
+        function enviar(direccion) {
+            console.log("🔼 Enviando: ", direccion);  // ✅ Este log te dirá si se está enviando
+            canal.postMessage({ tipo: 'movimiento', direccion });
+        }
+
+        function activarPantallaCompleta() {
+            const doc = document.documentElement;
+            const boton = document.getElementById("btnFullscreen");
+
+            if (doc.requestFullscreen) {
+                doc.requestFullscreen();
+            } else if (doc.webkitRequestFullscreen) {
+                doc.webkitRequestFullscreen();
+            } else if (doc.msRequestFullscreen) {
+                doc.msRequestFullscreen();
+            }
+
+            boton.classList.add("oculto");
+        }
+    </script>
+</body>
+
+</html>

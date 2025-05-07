@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetRunner – Inicio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet" />
+    <style>
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        #error-msg {
+            color: orange;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="video-background">
+        <source src="assets/dino6.mp4" type="video/mp4" />
+        Tu navegador no soporta video HTML5.
+    </video>
+
+    <div class="landing">
+        <div class="hero">
+            <div class="text-zone">
+                <h1>NetRunner</h1>
+                <p class="subtitle">Conectados con Buenas Prácticas</p>
+
+                <div>
+                    <input type="text" id="team-name" placeholder="Ej. U-TIC Squad" />
+                    <div id="error-msg">⚠️ Ingresa un nombre de equipo.</div>
+                </div>
+
+                <h3>Selecciona tu personaje:</h3>
+                <div class="character-selection">
+                    <button onclick="selectCharacter('dino')">🦖 Dino</button>
+                    <button onclick="selectCharacter('auto')">🚗 Auto</button>
+                </div>
+
+                <button id="play-btn" onclick="validateAndStart()">JUGAR</button>
+                <!-- Botón para abrir el control en nueva pestaña -->
+                <a href="control.html" target="_blank" class="btn-control">🎮 Usar como control remoto</a>
+
+            </div>
+            <div class="image-zone">
+                <img src="assets/dino2.png" alt="Dino" class="main-character" id="preview-character" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectCharacter(character) {
+            localStorage.setItem("selectedCharacter", character);
+            const img = character === "dino" ? "assets/dino2.png" : "assets/auto.png";
+            document.getElementById("preview-character").src = img;
+        }
+
+        function validateAndStart() {
+            const name = document.getElementById("team-name").value.trim();
+            const errorMsg = document.getElementById("error-msg");
+
+            if (!name) {
+                errorMsg.style.display = "block";
+                return;
+            }
+
+            localStorage.setItem("nombreEquipo", name);
+            window.location.href = "game.html";
+        }
+
+        // Ocultar mensaje de error si empieza a escribir
+        document.getElementById("team-name").addEventListener("input", () => {
+            document.getElementById("error-msg").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
