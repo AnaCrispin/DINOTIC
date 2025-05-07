@@ -1,212 +1,802 @@
 [
     {
+        "id": 1,
         "tipo": "seguridad",
         "nivel": "basico",
-        "texto": "¿Guardar contraseñas en papel es buena práctica?",
+        "texto": "¿Debes compartir tus contraseñas con otras personas?",
         "respuesta": false,
-        "explicacion": "Guardar contraseñas en papel es riesgoso porque cualquiera que encuentre el papel podría acceder a tus cuentas."
+        "explicacion": "Compartir contraseñas compromete tu privacidad y seguridad."
     },
     {
+        "id": 2,
         "tipo": "seguridad",
         "nivel": "basico",
-        "texto": "¿Es seguro usar redes Wi-Fi públicas sin protección?",
+        "texto": "¿Una contraseña segura debe incluir letras, números y símbolos?",
+        "respuesta": true,
+        "explicacion": "Las contraseñas complejas son más difíciles de adivinar."
+    },
+    {
+        "id": 3,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Es recomendable conectarse a redes Wi-Fi públicas sin protección?",
         "respuesta": false,
-        "explicacion": "Porque estas redes pueden ser monitoreadas por otras personas, lo que permite que roben tus datos sin que te des cuenta."
+        "explicacion": "Estas redes pueden ser peligrosas y permitir robos de datos."
     },
     {
+        "id": 4,
         "tipo": "seguridad",
         "nivel": "basico",
-        "texto": "¿Una contraseña fuerte debe tener letras, números y símbolos?",
+        "texto": "¿Activar la verificación en dos pasos mejora la seguridad?",
         "respuesta": true,
-        "explicacion": "Una contraseña fuerte es difícil de adivinar porque combina distintos tipos de caracteres."
+        "explicacion": "Es una medida adicional que dificulta accesos no autorizados."
     },
     {
+        "id": 5,
         "tipo": "seguridad",
         "nivel": "basico",
-        "texto": "¿Es recomendable activar la verificación en dos pasos?",
-        "respuesta": true,
-        "explicacion": "La verificación en dos pasos añade una capa extra de seguridad a tus cuentas."
-    },
-    {
-        "tipo": "seguridad",
-        "nivel": "basico",
-        "texto": "¿Debes compartir tu contraseña con tus amigos para jugar juntos?",
+        "texto": "¿Es seguro usar la misma contraseña para todas tus cuentas?",
         "respuesta": false,
-        "explicacion": "Compartir contraseñas pone en riesgo tu seguridad, ya que pierdes el control de tu cuenta."
+        "explicacion": "Si una contraseña se filtra, todas tus cuentas están en riesgo."
     },
     {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Todos los virus son visibles de inmediato?",
-        "respuesta": false,
-        "explicacion": "Algunos virus trabajan en segundo plano y no muestran señales claras al principio."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Un virus informático puede dañar tu computadora?",
-        "respuesta": true,
-        "explicacion": "Un virus puede borrar archivos, dañar programas y hacer que tu equipo funcione mal."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Un virus puede borrar tus archivos?",
-        "respuesta": true,
-        "explicacion": "Sí, algunos virus están diseñados para eliminar documentos importantes en tu equipo."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Abrir archivos sospechosos puede activar un virus?",
-        "respuesta": true,
-        "explicacion": "Los archivos sospechosos pueden contener virus que se ejecutan al abrirlos."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Los virus se propagan por memorias USB?",
-        "respuesta": true,
-        "explicacion": "Los virus pueden copiarse automáticamente a memorias USB y propagarse a otras computadoras."
-    },
-    {
+        "id": 6,
         "tipo": "seguridad",
         "nivel": "intermedio",
-        "texto": "¿Es seguro usar la misma contraseña para todo?",
-        "respuesta": false,
-        "explicacion": "Usar la misma contraseña en todos lados aumenta el riesgo si una se filtra."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Un gusano informático se replica sin ayuda?",
+        "texto": "¿HTTPS protege mejor tus datos que HTTP?",
         "respuesta": true,
-        "explicacion": "Los gusanos se copian solos y se propagan por redes."
+        "explicacion": "HTTPS encripta la información, protegiendo tus datos en la red."
     },
     {
-        "tipo": "virus",
-        "nivel": "avanzado",
-        "texto": "¿Los virus se eliminan reiniciando el equipo?",
-        "respuesta": false,
-        "explicacion": "Reiniciar no elimina virus; se necesita un antivirus."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "avanzado",
-        "texto": "¿Un keylogger graba lo que escribes?",
-        "respuesta": true,
-        "explicacion": "Un keylogger es un virus que espía tus pulsaciones de teclado."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "avanzado",
-        "texto": "¿Un keylogger graba lo que escribes?",
-        "respuesta": true,
-        "explicacion": "Un keylogger es un virus que espía tus pulsaciones de teclado."
-    },
-    {
-        "tipo": "seguridad",
-        "nivel": "avanzado",
-        "texto": "¿Es seguro usar la misma contraseña para todo?",
-        "respuesta": false,
-        "explicacion": "Usar la misma contraseña en todos lados aumenta el riesgo si una se filtra."
-    },
-    {
-        "tipo": "seguridad",
-        "nivel": "basico",
-        "texto": "¿HTTPS es más seguro que HTTP?",
-        "respuesta": true,
-        "explicacion": "HTTPS encripta la información que envías, evitando que sea vista por otros."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "avanzado",
-        "texto": "¿Un gusano informático se replica sin ayuda?",
-        "respuesta": true,
-        "explicacion": "Los gusanos se copian solos y se propagan por redes."
-    },
-    {
+        "id": 7,
         "tipo": "seguridad",
         "nivel": "intermedio",
-        "texto": "¿Un firewall protege contra intrusos externos?",
-        "respuesta": true,
-        "explicacion": "Un firewall controla lo que entra y sale de tu red, ayudando a bloquear accesos no deseados."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "intermedio",
-        "texto": "¿Todo archivo .exe es peligroso?",
+        "texto": "¿Guardar contraseñas en el navegador es 100% seguro?",
         "respuesta": false,
-        "explicacion": "No todos los .exe son malos, pero pueden ser usados para instalar virus."
+        "explicacion": "Pueden ser robadas si alguien accede a tu computadora."
     },
     {
-        "tipo": "virus",
+        "id": 8,
+        "tipo": "seguridad",
         "nivel": "intermedio",
-        "texto": "¿Un gusano informático se replica sin ayuda?",
+        "texto": "¿Es importante revisar los permisos de las aplicaciones móviles?",
         "respuesta": true,
-        "explicacion": "Los gusanos se copian solos y se propagan por redes."
+        "explicacion": "Algunas apps solicitan acceso innecesario que puede violar tu privacidad."
     },
     {
+        "id": 9,
         "tipo": "seguridad",
-        "nivel": "basico",
-        "texto": "¿Un firewall protege contra intrusos externos?",
+        "nivel": "intermedio",
+        "texto": "¿Una VPN oculta tu actividad en internet?",
         "respuesta": true,
-        "explicacion": "Un firewall controla lo que entra y sale de tu red, ayudando a bloquear accesos no deseados."
+        "explicacion": "La VPN cifra tu conexión y mejora la privacidad."
     },
     {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Los virus se eliminan reiniciando el equipo?",
+        "id": 10,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Es seguro hacer clic en cualquier enlace recibido por correo?",
         "respuesta": false,
-        "explicacion": "Reiniciar no elimina virus; se necesita un antivirus."
+        "explicacion": "Podrían ser enlaces falsos para robar información."
     },
     {
-        "tipo": "seguridad",
-        "nivel": "basico",
-        "texto": "¿Un firewall protege contra intrusos externos?",
-        "respuesta": true,
-        "explicacion": "Un firewall controla lo que entra y sale de tu red, ayudando a bloquear accesos no deseados."
-    },
-    {
+        "id": 11,
         "tipo": "seguridad",
         "nivel": "avanzado",
-        "texto": "¿Cambiar la contraseña cada cierto tiempo es seguro?",
+        "texto": "¿Los ataques de phishing pueden imitar páginas reales?",
         "respuesta": true,
-        "explicacion": "Cambiar la contraseña regularmente reduce el riesgo de hackeos prolongados."
+        "explicacion": "Suplantan sitios para engañarte y robar tus datos."
     },
     {
-        "tipo": "virus",
-        "nivel": "intermedio",
-        "texto": "¿Todo archivo .exe es peligroso?",
-        "respuesta": false,
-        "explicacion": "No todos los .exe son malos, pero pueden ser usados para instalar virus."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Un gusano informático se replica sin ayuda?",
-        "respuesta": true,
-        "explicacion": "Los gusanos se copian solos y se propagan por redes."
-    },
-    {
+        "id": 12,
         "tipo": "seguridad",
         "nivel": "avanzado",
-        "texto": "¿HTTPS es más seguro que HTTP?",
-        "respuesta": true,
-        "explicacion": "HTTPS encripta la información que envías, evitando que sea vista por otros."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Un keylogger graba lo que escribes?",
-        "respuesta": true,
-        "explicacion": "Un keylogger es un virus que espía tus pulsaciones de teclado."
-    },
-    {
-        "tipo": "virus",
-        "nivel": "basico",
-        "texto": "¿Los virus se eliminan reiniciando el equipo?",
+        "texto": "¿Cambiar contraseñas cada semana garantiza seguridad?",
         "respuesta": false,
-        "explicacion": "Reiniciar no elimina virus; se necesita un antivirus."
+        "explicacion": "Lo importante es tener contraseñas seguras, no cambiarlas constantemente."
+    },
+    {
+        "id": 13,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los administradores de contraseñas son herramientas útiles?",
+        "respuesta": true,
+        "explicacion": "Almacenan contraseñas de forma cifrada y segura."
+    },
+    {
+        "id": 14,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger puede registrar tus pulsaciones sin que lo notes?",
+        "respuesta": true,
+        "explicacion": "Es un software espía que actúa en segundo plano."
+    },
+    {
+        "id": 15,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Es seguro desactivar el antivirus si confías en un archivo?",
+        "respuesta": false,
+        "explicacion": "Aunque parezca confiable, siempre existe un riesgo."
+    },
+    {
+        "id": 16,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un virus puede hacer que tu computadora funcione mal?",
+        "respuesta": true,
+        "explicacion": "Algunos virus dañan el sistema o lo ralentizan."
+    },
+    {
+        "id": 17,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Abrir archivos desconocidos puede infectar tu equipo?",
+        "respuesta": true,
+        "explicacion": "Es una vía común para propagar virus."
+    },
+    {
+        "id": 18,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus solo se transmiten por internet?",
+        "respuesta": false,
+        "explicacion": "También pueden propagarse por USB o redes locales."
+    },
+    {
+        "id": 19,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un antivirus puede detectar todos los virus?",
+        "respuesta": false,
+        "explicacion": "Algunos virus nuevos pueden pasar desapercibidos."
+    },
+    {
+        "id": 20,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 21,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Un archivo .exe puede contener un virus?",
+        "respuesta": true,
+        "explicacion": "Los archivos ejecutables pueden tener código malicioso."
+    },
+    {
+        "id": 22,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Los troyanos pueden parecer programas normales?",
+        "respuesta": true,
+        "explicacion": "Se disfrazan para engañar al usuario."
+    },
+    {
+        "id": 23,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Es buena práctica tener dos antivirus al mismo tiempo?",
+        "respuesta": false,
+        "explicacion": "Pueden entrar en conflicto y disminuir la protección."
+    },
+    {
+        "id": 24,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Los virus pueden robar tu información personal?",
+        "respuesta": true,
+        "explicacion": "Algunos están diseñados para espiar tus datos."
+    },
+    {
+        "id": 25,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Un correo con archivos adjuntos siempre es seguro?",
+        "respuesta": false,
+        "explicacion": "Podría contener malware oculto."
+    },
+    {
+        "id": 26,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un rootkit puede ocultar su presencia al sistema?",
+        "respuesta": true,
+        "explicacion": "Se diseñan para evadir la detección."
+    },
+    {
+        "id": 27,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un ransomware bloquea el acceso a tus archivos?",
+        "respuesta": true,
+        "explicacion": "Exige un pago para recuperarlos."
+    },
+    {
+        "id": 28,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Formatear tu PC siempre elimina todos los virus?",
+        "respuesta": false,
+        "explicacion": "Algunos virus se esconden en sectores protegidos."
+    },
+    {
+        "id": 29,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un malware puede controlar tu cámara sin permiso?",
+        "respuesta": true,
+        "explicacion": "Puede activar la cámara sin que lo notes."
+    },
+    {
+        "id": 30,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un spyware puede recolectar contraseñas sin que lo sepas?",
+        "respuesta": true,
+        "explicacion": "Actúa en secreto para espiar tu actividad."
+    },
+    {
+        "id": 31,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los ataques de phishing pueden imitar páginas reales?",
+        "respuesta": true,
+        "explicacion": "Suplantan sitios para engañarte y robar tus datos."
+    },
+    {
+        "id": 32,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un malware puede controlar tu cámara sin permiso?",
+        "respuesta": true,
+        "explicacion": "Puede activar la cámara sin que lo notes."
+    },
+    {
+        "id": 33,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger puede registrar tus pulsaciones sin que lo notes?",
+        "respuesta": true,
+        "explicacion": "Es un software espía que actúa en segundo plano."
+    },
+    {
+        "id": 34,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Es seguro usar la misma contraseña para todas tus cuentas?",
+        "respuesta": false,
+        "explicacion": "Si una contraseña se filtra, todas tus cuentas están en riesgo."
+    },
+    {
+        "id": 35,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Debes compartir tus contraseñas con otras personas?",
+        "respuesta": false,
+        "explicacion": "Compartir contraseñas compromete tu privacidad y seguridad."
+    },
+    {
+        "id": 36,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Es seguro usar la misma contraseña para todas tus cuentas?",
+        "respuesta": false,
+        "explicacion": "Si una contraseña se filtra, todas tus cuentas están en riesgo."
+    },
+    {
+        "id": 37,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los administradores de contraseñas son herramientas útiles?",
+        "respuesta": true,
+        "explicacion": "Almacenan contraseñas de forma cifrada y segura."
+    },
+    {
+        "id": 38,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Es seguro desactivar el antivirus si confías en un archivo?",
+        "respuesta": false,
+        "explicacion": "Aunque parezca confiable, siempre existe un riesgo."
+    },
+    {
+        "id": 39,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Una contraseña segura debe incluir letras, números y símbolos?",
+        "respuesta": true,
+        "explicacion": "Las contraseñas complejas son más difíciles de adivinar."
+    },
+    {
+        "id": 40,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Una VPN oculta tu actividad en internet?",
+        "respuesta": true,
+        "explicacion": "La VPN cifra tu conexión y mejora la privacidad."
+    },
+    {
+        "id": 41,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un virus puede hacer que tu computadora funcione mal?",
+        "respuesta": true,
+        "explicacion": "Algunos virus dañan el sistema o lo ralentizan."
+    },
+    {
+        "id": 42,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Es importante revisar los permisos de las aplicaciones móviles?",
+        "respuesta": true,
+        "explicacion": "Algunas apps solicitan acceso innecesario que puede violar tu privacidad."
+    },
+    {
+        "id": 43,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Debes compartir tus contraseñas con otras personas?",
+        "respuesta": false,
+        "explicacion": "Compartir contraseñas compromete tu privacidad y seguridad."
+    },
+    {
+        "id": 44,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un malware puede controlar tu cámara sin permiso?",
+        "respuesta": true,
+        "explicacion": "Puede activar la cámara sin que lo notes."
+    },
+    {
+        "id": 45,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Una contraseña segura debe incluir letras, números y símbolos?",
+        "respuesta": true,
+        "explicacion": "Las contraseñas complejas son más difíciles de adivinar."
+    },
+    {
+        "id": 46,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Los troyanos pueden parecer programas normales?",
+        "respuesta": true,
+        "explicacion": "Se disfrazan para engañar al usuario."
+    },
+    {
+        "id": 47,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los ataques de phishing pueden imitar páginas reales?",
+        "respuesta": true,
+        "explicacion": "Suplantan sitios para engañarte y robar tus datos."
+    },
+    {
+        "id": 48,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 49,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Es importante revisar los permisos de las aplicaciones móviles?",
+        "respuesta": true,
+        "explicacion": "Algunas apps solicitan acceso innecesario que puede violar tu privacidad."
+    },
+    {
+        "id": 50,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 51,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un rootkit puede ocultar su presencia al sistema?",
+        "respuesta": true,
+        "explicacion": "Se diseñan para evadir la detección."
+    },
+    {
+        "id": 52,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Es seguro desactivar el antivirus si confías en un archivo?",
+        "respuesta": false,
+        "explicacion": "Aunque parezca confiable, siempre existe un riesgo."
+    },
+    {
+        "id": 53,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los administradores de contraseñas son herramientas útiles?",
+        "respuesta": true,
+        "explicacion": "Almacenan contraseñas de forma cifrada y segura."
+    },
+    {
+        "id": 54,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un virus puede hacer que tu computadora funcione mal?",
+        "respuesta": true,
+        "explicacion": "Algunos virus dañan el sistema o lo ralentizan."
+    },
+    {
+        "id": 55,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus solo se transmiten por internet?",
+        "respuesta": false,
+        "explicacion": "También pueden propagarse por USB o redes locales."
+    },
+    {
+        "id": 56,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Un correo con archivos adjuntos siempre es seguro?",
+        "respuesta": false,
+        "explicacion": "Podría contener malware oculto."
+    },
+    {
+        "id": 57,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Activar la verificación en dos pasos mejora la seguridad?",
+        "respuesta": true,
+        "explicacion": "Es una medida adicional que dificulta accesos no autorizados."
+    },
+    {
+        "id": 58,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un ransomware bloquea el acceso a tus archivos?",
+        "respuesta": true,
+        "explicacion": "Exige un pago para recuperarlos."
+    },
+    {
+        "id": 59,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un malware puede controlar tu cámara sin permiso?",
+        "respuesta": true,
+        "explicacion": "Puede activar la cámara sin que lo notes."
+    },
+    {
+        "id": 60,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un antivirus puede detectar todos los virus?",
+        "respuesta": false,
+        "explicacion": "Algunos virus nuevos pueden pasar desapercibidos."
+    },
+    {
+        "id": 61,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Abrir archivos desconocidos puede infectar tu equipo?",
+        "respuesta": true,
+        "explicacion": "Es una vía común para propagar virus."
+    },
+    {
+        "id": 62,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los administradores de contraseñas son herramientas útiles?",
+        "respuesta": true,
+        "explicacion": "Almacenan contraseñas de forma cifrada y segura."
+    },
+    {
+        "id": 63,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un antivirus puede detectar todos los virus?",
+        "respuesta": false,
+        "explicacion": "Algunos virus nuevos pueden pasar desapercibidos."
+    },
+    {
+        "id": 64,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger puede registrar tus pulsaciones sin que lo notes?",
+        "respuesta": true,
+        "explicacion": "Es un software espía que actúa en segundo plano."
+    },
+    {
+        "id": 65,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 66,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los ataques de phishing pueden imitar páginas reales?",
+        "respuesta": true,
+        "explicacion": "Suplantan sitios para engañarte y robar tus datos."
+    },
+    {
+        "id": 67,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Los virus pueden robar tu información personal?",
+        "respuesta": true,
+        "explicacion": "Algunos están diseñados para espiar tus datos."
+    },
+    {
+        "id": 68,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un antivirus puede detectar todos los virus?",
+        "respuesta": false,
+        "explicacion": "Algunos virus nuevos pueden pasar desapercibidos."
+    },
+    {
+        "id": 69,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un antivirus puede detectar todos los virus?",
+        "respuesta": false,
+        "explicacion": "Algunos virus nuevos pueden pasar desapercibidos."
+    },
+    {
+        "id": 70,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Un correo con archivos adjuntos siempre es seguro?",
+        "respuesta": false,
+        "explicacion": "Podría contener malware oculto."
+    },
+    {
+        "id": 71,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 72,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger puede registrar tus pulsaciones sin que lo notes?",
+        "respuesta": true,
+        "explicacion": "Es un software espía que actúa en segundo plano."
+    },
+    {
+        "id": 73,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 74,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Activar la verificación en dos pasos mejora la seguridad?",
+        "respuesta": true,
+        "explicacion": "Es una medida adicional que dificulta accesos no autorizados."
+    },
+    {
+        "id": 75,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Activar la verificación en dos pasos mejora la seguridad?",
+        "respuesta": true,
+        "explicacion": "Es una medida adicional que dificulta accesos no autorizados."
+    },
+    {
+        "id": 76,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los ataques de phishing pueden imitar páginas reales?",
+        "respuesta": true,
+        "explicacion": "Suplantan sitios para engañarte y robar tus datos."
+    },
+    {
+        "id": 77,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Un keylogger puede registrar tus pulsaciones sin que lo notes?",
+        "respuesta": true,
+        "explicacion": "Es un software espía que actúa en segundo plano."
+    },
+    {
+        "id": 78,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un rootkit puede ocultar su presencia al sistema?",
+        "respuesta": true,
+        "explicacion": "Se diseñan para evadir la detección."
+    },
+    {
+        "id": 79,
+        "tipo": "virus",
+        "nivel": "intermedio",
+        "texto": "¿Un archivo .exe puede contener un virus?",
+        "respuesta": true,
+        "explicacion": "Los archivos ejecutables pueden tener código malicioso."
+    },
+    {
+        "id": 80,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Debes compartir tus contraseñas con otras personas?",
+        "respuesta": false,
+        "explicacion": "Compartir contraseñas compromete tu privacidad y seguridad."
+    },
+    {
+        "id": 81,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 82,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Guardar contraseñas en el navegador es 100% seguro?",
+        "respuesta": false,
+        "explicacion": "Pueden ser robadas si alguien accede a tu computadora."
+    },
+    {
+        "id": 83,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 84,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus solo se transmiten por internet?",
+        "respuesta": false,
+        "explicacion": "También pueden propagarse por USB o redes locales."
+    },
+    {
+        "id": 85,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿HTTPS protege mejor tus datos que HTTP?",
+        "respuesta": true,
+        "explicacion": "HTTPS encripta la información, protegiendo tus datos en la red."
+    },
+    {
+        "id": 86,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Activar la verificación en dos pasos mejora la seguridad?",
+        "respuesta": true,
+        "explicacion": "Es una medida adicional que dificulta accesos no autorizados."
+    },
+    {
+        "id": 87,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un rootkit puede ocultar su presencia al sistema?",
+        "respuesta": true,
+        "explicacion": "Se diseñan para evadir la detección."
+    },
+    {
+        "id": 88,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Debes compartir tus contraseñas con otras personas?",
+        "respuesta": false,
+        "explicacion": "Compartir contraseñas compromete tu privacidad y seguridad."
+    },
+    {
+        "id": 89,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Es seguro hacer clic en cualquier enlace recibido por correo?",
+        "respuesta": false,
+        "explicacion": "Podrían ser enlaces falsos para robar información."
+    },
+    {
+        "id": 90,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Guardar contraseñas en el navegador es 100% seguro?",
+        "respuesta": false,
+        "explicacion": "Pueden ser robadas si alguien accede a tu computadora."
+    },
+    {
+        "id": 91,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿HTTPS protege mejor tus datos que HTTP?",
+        "respuesta": true,
+        "explicacion": "HTTPS encripta la información, protegiendo tus datos en la red."
+    },
+    {
+        "id": 92,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Es recomendable conectarse a redes Wi-Fi públicas sin protección?",
+        "respuesta": false,
+        "explicacion": "Estas redes pueden ser peligrosas y permitir robos de datos."
+    },
+    {
+        "id": 93,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Un virus puede hacer que tu computadora funcione mal?",
+        "respuesta": true,
+        "explicacion": "Algunos virus dañan el sistema o lo ralentizan."
+    },
+    {
+        "id": 94,
+        "tipo": "seguridad",
+        "nivel": "avanzado",
+        "texto": "¿Los ataques de phishing pueden imitar páginas reales?",
+        "respuesta": true,
+        "explicacion": "Suplantan sitios para engañarte y robar tus datos."
+    },
+    {
+        "id": 95,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Es seguro hacer clic en cualquier enlace recibido por correo?",
+        "respuesta": false,
+        "explicacion": "Podrían ser enlaces falsos para robar información."
+    },
+    {
+        "id": 96,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Una contraseña segura debe incluir letras, números y símbolos?",
+        "respuesta": true,
+        "explicacion": "Las contraseñas complejas son más difíciles de adivinar."
+    },
+    {
+        "id": 97,
+        "tipo": "virus",
+        "nivel": "avanzado",
+        "texto": "¿Un spyware puede recolectar contraseñas sin que lo sepas?",
+        "respuesta": true,
+        "explicacion": "Actúa en secreto para espiar tu actividad."
+    },
+    {
+        "id": 98,
+        "tipo": "virus",
+        "nivel": "basico",
+        "texto": "¿Los virus siempre muestran mensajes o alertas?",
+        "respuesta": false,
+        "explicacion": "Algunos trabajan en silencio y son difíciles de detectar."
+    },
+    {
+        "id": 99,
+        "tipo": "seguridad",
+        "nivel": "intermedio",
+        "texto": "¿Guardar contraseñas en el navegador es 100% seguro?",
+        "respuesta": false,
+        "explicacion": "Pueden ser robadas si alguien accede a tu computadora."
+    },
+    {
+        "id": 100,
+        "tipo": "seguridad",
+        "nivel": "basico",
+        "texto": "¿Debes compartir tus contraseñas con otras personas?",
+        "respuesta": false,
+        "explicacion": "Compartir contraseñas compromete tu privacidad y seguridad."
     }
 ]
