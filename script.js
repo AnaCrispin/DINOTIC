@@ -60,22 +60,34 @@ window.addEventListener("DOMContentLoaded", () => {
         const pantalla = document.getElementById("final-screen");
         if (pantalla) pantalla.classList.add("oculto");
     }
-
     function mostrarPantallaFinal() {
         const pantalla = document.getElementById("final-screen");
+        const ranking = document.getElementById("ranking");
+
         if (pantalla) pantalla.classList.remove("oculto");
+        if (ranking) ranking.classList.remove("oculto");
+
         document.getElementById("final-score").textContent = "Tu puntaje: " + score;
 
-        setTimeout(() => {
-            // const nombre = prompt("🏁 ¡Juego terminado! Escribe tu nombre para el ranking:");
-            const nombre = localStorage.getItem("nombreEquipo") || "Anónimo";
+        // Guarda el puntaje y nombre en el ranking
+        const equipo = localStorage.getItem("nombreEquipo") || "Anónimo";
+        const datos = JSON.parse(localStorage.getItem("rankingGlobal") || "[]");
+        datos.push({ nombre: equipo, puntaje: score });
 
-            if (nombre) {
-                guardarPuntaje(nombre, score);
-            }
-            mostrarRanking();
-        }, 500); // Espera breve para que no se solape
+        // Ordena y guarda
+        datos.sort((a, b) => b.puntaje - a.puntaje);
+        localStorage.setItem("rankingGlobal", JSON.stringify(datos.slice(0, 5))); // top 5
+
+        // Muestra
+        const lista = document.getElementById("lista-ranking");
+        lista.innerHTML = "";
+        datos.slice(0, 5).forEach(e => {
+            const li = document.createElement("li");
+            li.textContent = `${e.nombre}: ${e.puntaje}`;
+            lista.appendChild(li);
+        });
     }
+
 
     function guardarPuntaje(nombre, puntaje) {
         const ranking = JSON.parse(localStorage.getItem("ranking")) || [];

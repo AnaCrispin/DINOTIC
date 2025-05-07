@@ -410,3 +410,37 @@ aside#hud {
 #blur-layer.oculto {
     display: none;
 }
+
+#ranking {
+    background-color: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px #00f0ff;
+    font-family: 'Baloo 2', cursive;
+    z-index: 1100;
+    position: relative;
+}
+
+#ranking h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+#lista-ranking {
+    list-style: decimal;
+    padding-left: 0;
+    margin: 0;
+}
+
+#lista-ranking li {
+    text-align: left;
+    margin: 8px 0;
+    font-size: 1.2rem;
+    background: #2a2a2a;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
