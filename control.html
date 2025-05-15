@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>U-TIC</title>
+    <script src="/juegouticdino/socket.io/socket.io.js"></script>
     <style>
         html,
         body {
@@ -132,12 +133,42 @@
         <button class="btn right" onclick="enviar('derecha')">➡️</button>
     </div>
 
-    <script>
+    <!-- <script>   
+
         const canal = new BroadcastChannel('canal_control_dino');
 
         function enviar(direccion) {
             console.log("🔼 Enviando: ", direccion);  // ✅ Este log te dirá si se está enviando
             canal.postMessage({ tipo: 'movimiento', direccion });
+        }
+
+        function activarPantallaCompleta() {
+            const doc = document.documentElement;
+            const boton = document.getElementById("btnFullscreen");
+
+            if (doc.requestFullscreen) {
+                doc.requestFullscreen();
+            } else if (doc.webkitRequestFullscreen) {
+                doc.webkitRequestFullscreen();
+            } else if (doc.msRequestFullscreen) {
+                doc.msRequestFullscreen();
+            }
+
+            boton.classList.add("oculto");
+        }
+    </script> -->
+    <script>
+        const socket = io("https://netrunnerdino.upea.edu.bo", {
+            path: "/juegouticdino/socket.io"
+        });
+
+        socket.on("connect", () => {
+            console.log("✅ Control conectado al servidor");
+        });
+
+        function enviar(direccion) {
+            console.log("🔼 Enviando:", direccion);
+            socket.emit("movimiento", { tipo: "movimiento", direccion });
         }
 
         function activarPantallaCompleta() {

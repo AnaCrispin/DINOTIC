@@ -7,6 +7,8 @@
     <title>NetRunner – Juego</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <!-- Socket.IO desde CDN -->
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
 </head>
 
 <body>
@@ -35,18 +37,20 @@
     <!-- Indicador de nivel -->
     <div id="level-indicator">Nivel 1</div>
 
-
-
-    <script src="script.js"></script>
+    <!-- Modal de pregunta -->
     <div id="pregunta-modal" class="oculto">
         <div class="pregunta-contenido">
             <h3 id="texto-pregunta">Pregunta aquí...</h3>
             <p>Usa ← para FALSO, → para VERDADERO</p>
         </div>
     </div>
+
+    <!-- Modal de retroalimentación -->
     <div id="feedback-modal" class="oculto">
         <div id="feedback-texto">Retroalimentación aquí</div>
     </div>
+
+    <!-- Capa de fondo borroso -->
     <div id="blur-layer" class="oculto"></div>
 
     <!-- Ranking final -->
@@ -54,6 +58,43 @@
         <h2>🏆 Ranking de Puntajes</h2>
         <ol id="lista-ranking"></ol>
     </div>
+
+    <!-- Tu script principal -->
+    <script src="script.js"></script>
+
+    <!-- Conexión a Socket.IO -->
+    <!-- Conexión a Socket.IO -->
+    <script>
+        const socket = io("https://netrunnerdino.upea.edu.bo", {
+            path: "/juegouticdino/socket.io/",  <!-- 🔧 CAMBIO NECESARIO -->
+            transports: ["websocket"],
+            secure: true
+        });
+
+        socket.on('movimiento', (data) => {
+            const { tipo, direccion } = data;
+
+            // Esto debe coincidir con tu lógica en script.js
+            if (window.preguntaActiva && tipo === "movimiento") {
+                if (!window.teclasHabilitadas) return;
+
+                if (direccion === "derecha") window.resolverPregunta(true);
+                if (direccion === "izquierda") window.resolverPregunta(false);
+                return;
+            }
+
+            // Movimiento del personaje
+            if (tipo === "movimiento") {
+                if (direccion === "izquierda") window.personajeX -= 40;
+                if (direccion === "derecha") window.personajeX += 40;
+                if (direccion === "saltar" && !window.enElAire) {
+                    window.velocidadY = -18;
+                    window.enElAire = true;
+                }
+            }
+        });
+    </script>
+
 
 </body>
 
