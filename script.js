@@ -1,4 +1,3 @@
-// script.js actualizado con Socket.IO y mejoras
 let bancoPreguntas = [];
 let preguntaActiva = false;
 let resolverPregunta;
@@ -23,27 +22,41 @@ window.addEventListener("DOMContentLoaded", () => {
     let velocidadY = 0;
     let enElAire = false;
 
+    // 🟢 Exportar al window para acceso externo (ej. desde Socket.IO)
+    window.personajeX = personajeX;
+    window.personajeY = personajeY;
+    window.velocidadY = velocidadY;
+    window.enElAire = enElAire;
+    window.preguntaActiva = preguntaActiva;
+    window.teclasHabilitadas = teclasHabilitadas;
+    window.resolverPregunta = resolverPregunta;
+
     const gravedad = 1.5;
     const salto = -18;
 
     let personajeImg = new Image();
     personajeImg.src = selectedCharacter === "dino" ? "assets/dino2.png" : "assets/auto.png";
 
-    const socket = io("https://netrunnerdino.upea.edu.bo");
+    const socket = io("https://netrunnerdino.upea.edu.bo", {
+        path: "/juegouticdino/socket.io",
+        transports: ["websocket"],
+        secure: true
+    });
+
     socket.on("movimiento", ({ tipo, direccion }) => {
-        if (preguntaActiva && tipo === "movimiento") {
-            if (!teclasHabilitadas) return;
-            if (direccion === "derecha") resolverPregunta(true);
-            if (direccion === "izquierda") resolverPregunta(false);
+        if (window.preguntaActiva && tipo === "movimiento") {
+            if (!window.teclasHabilitadas) return;
+            if (direccion === "derecha") window.resolverPregunta(true);
+            if (direccion === "izquierda") window.resolverPregunta(false);
             return;
         }
 
         if (tipo === "movimiento") {
-            if (direccion === "izquierda") personajeX -= 40;
-            if (direccion === "derecha") personajeX += 40;
-            if (direccion === "saltar" && !enElAire) {
-                velocidadY = salto;
-                enElAire = true;
+            if (direccion === "izquierda") window.personajeX -= 40;
+            if (direccion === "derecha") window.personajeX += 40;
+            if (direccion === "saltar" && !window.enElAire) {
+                window.velocidadY = salto;
+                window.enElAire = true;
             }
         }
     });
@@ -99,7 +112,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function cambiarTurno() {
         turnoActual = (turnoActual + 1) % niveles.length;
         nivelActual = niveles[turnoActual];
-        preguntasUsadas = []; // Reset preguntas por nivel
+        preguntasUsadas = [];
 
         const nombreNivel = nivelActual.charAt(0).toUpperCase() + nivelActual.slice(1);
         document.getElementById("jugador-activo").textContent = "Jugador: Nivel " + nombreNivel;
@@ -187,6 +200,7 @@ window.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => gameLoop(), 6000);
         };
 
+        // Teclas para responder
         function escucharRespuesta(e) {
             if (!teclasHabilitadas) return;
             if (e.key === "ArrowRight") resolverPregunta(true);
@@ -203,6 +217,17 @@ window.addEventListener("DOMContentLoaded", () => {
     let animacionID;
     let tiempoInicio = Date.now();
     let puedeMostrarPregunta = false;
+
+    document.addEventListener("keydown", (e) => {
+        if (preguntaActiva) return;
+
+        if (e.key === "ArrowLeft") personajeX -= 40;
+        else if (e.key === "ArrowRight") personajeX += 40;
+        else if (e.key === "ArrowUp" && !enElAire) {
+            velocidadY = salto;
+            enElAire = true;
+        }
+    });
 
     function gameLoop() {
         if (!puedeMostrarPregunta && Date.now() - tiempoInicio > 3000) puedeMostrarPregunta = true;
@@ -221,6 +246,9 @@ window.addEventListener("DOMContentLoaded", () => {
             personajeY = canvas.height - 100;
             enElAire = false;
         }
+
+        if (personajeX < 0) personajeX = 0;
+        if (personajeX > canvas.width - 60) personajeX = canvas.width - 60;
 
         ctx.drawImage(personajeImg, personajeX, personajeY, 60, 60);
 
@@ -241,6 +269,12 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             if (obj.y > canvas.height) objetos.splice(i, 1);
         }
+
+        // 🔄 Refrescar valores globales en cada frame
+        window.personajeX = personajeX;
+        window.personajeY = personajeY;
+        window.velocidadY = velocidadY;
+        window.enElAire = enElAire;
     }
 
     function restartGame() {

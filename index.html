@@ -6,22 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NetRunne – Inicio</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet" />
-    <style>
-        #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            object-fit: cover;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
+
+    <style>
         #error-msg {
+            font-family: 'Press Start 2P', cursive;
             color: orange;
-            font-size: 0.9em;
+            font-size: 1em;
             margin-top: 5px;
+            padding: 5px;
+            padding-block: 10px;
         }
 
         input[type="text"] {
@@ -32,6 +27,26 @@
             border-radius: 8px;
             border: none;
             margin-bottom: 10px;
+            box-shadow: 3px 3px 0 #000;
+        }
+
+        .fullscreen-btn {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: 2px solid #00f0ff;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .fullscreen-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 8px #00f0ff;
         }
     </style>
 </head>
@@ -39,9 +54,30 @@
 <body>
     <!-- Video de fondo -->
     <video autoplay muted loop id="video-background">
-        <source src="assets/dino6.mp4" type="video/mp4" />
+        <source src="assets/dino8.mp4" type="video/mp4" />
         Tu navegador no soporta video HTML5.
     </video>
+    <!-- Audio de fondo -->
+    <audio id="intro-audio" src="assets/intro.mp3" loop preload="auto"></audio>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("intro-audio");
+
+            // Iniciar reproducción solo después del primer clic
+            document.body.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.volume = 0.3;
+                    audio.play().catch(err => {
+                        console.warn("Autoplay bloqueado:", err);
+                    });
+                }
+            }, { once: true }); // Solo una vez
+        });
+    </script>
+
+
+
 
     <div class="landing">
         <div class="hero">
@@ -50,19 +86,21 @@
                 <p class="subtitle">Conectados con Buenas Prácticas</p>
 
                 <div>
-                    <input type="text" id="team-name" placeholder="Ej. U-TIC Squad" />
+                    <input type="text" id="team-name" placeholder="Ej. U-TIC Equipo" />
                     <div id="error-msg">⚠️ Ingresa un nombre de equipo.</div>
                 </div>
 
-                <h3>Selecciona tu personaje:</h3>
+                <!-- <h3>Selecciona tu personaje:</h3>
                 <div class="character-selection">
                     <button onclick="selectCharacter('dino')">🦖 Dino</button>
                     <button onclick="selectCharacter('auto')">🚗 Auto</button>
+                </div> -->
+
+                <div class="botonera">
+                    <button class="arcade-btn" onclick="validateAndStart()">🎮 JUGAR</button>
+                    <a href="control.html" class="arcade-btn" target="_blank">🕹️ CONTROL</a>
                 </div>
 
-                <button id="play-btn" onclick="validateAndStart()">JUGAR</button>
-                <!-- Botón para abrir el control en nueva pestaña -->
-                <a href="control.html" target="_blank" class="btn-control">🎮 Usar como control remoto</a>
 
             </div>
             <div class="image-zone">
@@ -96,6 +134,28 @@
             document.getElementById("error-msg").style.display = "none";
         });
     </script>
+    <button id="btnFullscreen" class="fullscreen-btn" onclick="activarPantallaCompleta()">⛶ Pantalla completa</button>
+    <script>
+        function activarPantallaCompleta() {
+            const doc = document.documentElement;
+            const boton = document.getElementById("btnFullscreen");
+
+            if (doc.requestFullscreen) {
+                doc.requestFullscreen();
+            } else if (doc.webkitRequestFullscreen) {
+                doc.webkitRequestFullscreen();
+            } else if (doc.msRequestFullscreen) {
+                doc.msRequestFullscreen();
+            }
+
+            // 👉 Ocultar el botón una vez que se active pantalla completa
+            boton.style.display = "none";
+        }
+    </script>
+
+
+
+
 </body>
 
 </html>

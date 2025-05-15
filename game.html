@@ -9,9 +9,74 @@
     <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
     <!-- Socket.IO desde CDN -->
     <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <style>
+        body {
+            background: url("assets/game.png") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        div,
+        span,
+        input,
+        button {
+            font-family: 'Press Start 2P', monospace !important;
+            font-size: 12px;
+            /* ajusta si está muy pequeño */
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+        }
+
+        #hud h2,
+        #jugador-activo,
+        #puntos,
+        #preguntas-restantes {
+            font-size: 0.8rem;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            color: #00f0ff;
+        }
+
+        .tecla {
+            display: inline-block;
+            background-color: #00f0ff;
+            color: black;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 6px;
+            box-shadow: 1px 1px 0 #000;
+            margin: 0 5px;
+            font-family: 'Press Start 2P', monospace;
+
+        }
+
+        #camera-wrapper {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            border: 4px solid limegreen;
+            /* verde por defecto */
+            border-radius: 10px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .estado-rojo~#camera-wrapper {
+            border-color: red;
+        }
+    </style>
     <!-- Contenedor principal -->
     <div id="game-wrapper">
         <!-- Área del juego -->
@@ -41,7 +106,12 @@
     <div id="pregunta-modal" class="oculto">
         <div class="pregunta-contenido">
             <h3 id="texto-pregunta">Pregunta aquí...</h3>
-            <p>Usa ← para FALSO, → para VERDADERO</p>
+            <p>
+                Usa
+                <span class="tecla">←</span> para <strong>FALSO</strong>,
+                <span class="tecla">→</span> para <strong>VERDADERO</strong>
+            </p>
+
         </div>
     </div>
 
@@ -66,24 +136,23 @@
     <!-- Conexión a Socket.IO -->
     <script>
         const socket = io("https://netrunnerdino.upea.edu.bo", {
-            path: "/juegouticdino/socket.io/",  <!-- 🔧 CAMBIO NECESARIO -->
-            transports: ["websocket"],
-            secure: true
+            path: "/juegouticdino/socket.io/",
+            // transports: ["websocket"],
+            // secure: true
         });
 
         socket.on('movimiento', (data) => {
             const { tipo, direccion } = data;
 
-            // Esto debe coincidir con tu lógica en script.js
+            // Respuesta a preguntas
             if (window.preguntaActiva && tipo === "movimiento") {
                 if (!window.teclasHabilitadas) return;
-
                 if (direccion === "derecha") window.resolverPregunta(true);
                 if (direccion === "izquierda") window.resolverPregunta(false);
                 return;
             }
 
-            // Movimiento del personaje
+            // Movimiento
             if (tipo === "movimiento") {
                 if (direccion === "izquierda") window.personajeX -= 40;
                 if (direccion === "derecha") window.personajeX += 40;
@@ -94,6 +163,54 @@
             }
         });
     </script>
+
+
+    <script>
+        document.addEventListener("keydown", (event) => {
+            if (!window.personajeX || !window.velocidadY) return; // Asegura que esté cargado
+
+            const tecla = event.key;
+
+            // Respuesta de preguntas si está activa
+            if (window.preguntaActiva && window.teclasHabilitadas) {
+                if (tecla === "ArrowRight") window.resolverPregunta(true);
+                if (tecla === "ArrowLeft") window.resolverPregunta(false);
+                return;
+            }
+
+            // Movimiento del personaje
+            if (tecla === "ArrowLeft") {
+                window.personajeX -= 40;
+            } else if (tecla === "ArrowRight") {
+                window.personajeX += 40;
+            } else if (tecla === "ArrowUp" && !window.enElAire) {
+                window.velocidadY = -18;
+                window.enElAire = true;
+            }
+        });
+        async function iniciarCamara() {
+            try {
+                const video = document.getElementById("webcam-preview");
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+
+                // ✅ Cambia a verde si funciona
+                document.getElementById("camera-status").className = "estado-verde";
+            } catch (error) {
+                console.error("❌ No se pudo acceder a la cámara:", error);
+                // 🔴 Muestra rojo si falla
+                document.getElementById("camera-status").className = "estado-rojo";
+
+                // OPCIONAL: En vez de video real, usar imagen Dino
+                document.getElementById("webcam-preview").poster = "assets/dino2.png";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", iniciarCamara);
+
+    </script>
+
+
 
 
 </body>
